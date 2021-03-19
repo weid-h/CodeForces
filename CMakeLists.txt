@@ -8,3 +8,6 @@ add_executable(6A
 
 add_executable(6B
         Problem-6/B/6B.cpp)
+
+add_executable(6C
+        Problem-6/C/6C.cpp)
