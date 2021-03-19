@@ -2,7 +2,6 @@
 // Created by wadeh on 19/03/2021.
 //
 
-
 #include <iostream>
 #include <vector>
 #include <set>
@@ -28,28 +27,26 @@ int main() {
 
     auto deputies = set<char>();
 
+    auto CheckAddDeputy = [&presidentColor, &deputies](char neighbor) {
+        if (neighbor != '.' && neighbor != presidentColor) {
+            deputies.insert(neighbor);
+        };
+    };
+
     for (int i = 0; i < length; i++) {
         for (int j = 0; j < width; j++) {
             if (matrix[i][j] == presidentColor) {
                 if (i - 1 >= 0) {
-                    if (matrix[i - 1][j] != '.' && matrix[i - 1][j] != presidentColor) {
-                        deputies.insert(matrix[i - 1][j]);
-                    }
+                    CheckAddDeputy(matrix[i - 1][j]);
                 }
                 if (i + 1 < length) {
-                    if (matrix[i + 1][j] != '.' && matrix[i + 1][j] != presidentColor) {
-                        deputies.insert(matrix[i + 1][j]);
-                    }
+                    CheckAddDeputy(matrix[i + 1][j]);
                 }
                 if (j - 1 >= 0) {
-                    if (matrix[i][j - 1] != '.' && matrix[i][j - 1] != presidentColor) {
-                        deputies.insert(matrix[i][j - 1]);
-                    }
+                    CheckAddDeputy(matrix[i][j - 1]);
                 }
                 if (j + 1 < width) {
-                    if (matrix[i][j + 1] != '.' && matrix[i][j + 1] != presidentColor) {
-                        deputies.insert(matrix[i][j + 1]);
-                    }
+                    CheckAddDeputy(matrix[i][j + 1]);
                 }
             }
         }
