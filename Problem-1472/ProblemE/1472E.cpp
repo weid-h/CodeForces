@@ -11,7 +11,7 @@ int main()
 
         scanf("%lld", &nValues);
 
-        ll values[nValues][2] = {};
+        ll values[nValues][2];
 
         for (ll j = 0; j < nValues; j++)
         {
@@ -19,7 +19,7 @@ int main()
             scanf("%lld", &values[j][1]);
         }
 
-        int resultValues[nValues] = {};
+        int resultValues[nValues];
 
         int smallestPerson = 0;
         int smallestPerson2 = 0;
