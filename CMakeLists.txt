@@ -11,3 +11,6 @@ add_executable(6B
 
 add_executable(6C
         Problem-6/C/6C.cpp)
+
+add_executable(7A
+        Problem-7/A/7A.cpp)
